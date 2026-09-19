@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+}
+
+input {
+  padding: 12px;
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 8px;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: white;
+  color: black;
+  font-size: 16px;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+main {
+  padding: 40px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+p {
+  color: #bbb;
+  font-size: 18px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main > div > div img {
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+main > div > div h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+main > div > div p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.details {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.details img {
+  width: 300px;
+  border-radius: 12px;
+}
+
+.details p {
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+}
+
+.movie-card {
+  width: 180px;
+}
+
+.movie-card img {
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.movie-card h2 {
+  font-size: 16px;
+  margin: 10px 0 6px;
+}
+
+.movie-card a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.movie-card a:hover {
+  text-decoration: underline;
+}
