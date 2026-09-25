@@ -3,23 +3,27 @@ import { useSearchParams } from "react-router-dom";
 import { searchMovies } from "../services/tmdb";
 import MovieCard from "../components/MovieCard";
 import { Search as SearchIcon } from "lucide-react";
+import type { Movie } from "../types/movie";
 
 function Search() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query");
 
-  const [search, setSearch] = useState("");
-  const [movies, setMovies] = useState<any[]>([]);
-
+  const [search, setSearch] = useState<string>(() => query || "");
+  const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
-  if (query) {
-    setSearch(query);
+    let mounted = true;
 
-    searchMovies(query).then((results) => {
-      setMovies(results);
-    });
-  }
-}, [query]);
+    if (query) {
+      searchMovies(query).then((results) => {
+        if (mounted) setMovies(results);
+      });
+    }
+
+    return () => {
+      mounted = false;
+    };
+  }, [query]);
 
   async function handleSearch() {
     if (!search) return;
@@ -40,13 +44,12 @@ function Search() {
       />
 
       <button onClick={handleSearch}>
-    <SearchIcon size={18} />
-  Pesquisar
-</button>
+        <SearchIcon size={18} /> Pesquisar
+      </button>
 
-{movies.map((movie) => (
-  <MovieCard key={movie.id} movie={movie} />
-))}
+      {movies.map((movie) => (
+        <MovieCard key={movie.id} movie={movie} />
+      ))}
     </div>
   );
 }

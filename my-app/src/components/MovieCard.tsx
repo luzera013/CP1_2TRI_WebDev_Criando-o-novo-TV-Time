@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import type { Movie } from "../types/movie";
 
 type MovieCardProps = {
-  movie: any;
+  movie: Movie;
 };
 
 function MovieCard({ movie }: MovieCardProps) {
